@@ -1,4 +1,5 @@
 import Header from "./components/Header";
+import HomePage from "./components/HomePage";
 
 export default function Home() {
   return (
@@ -7,7 +8,9 @@ export default function Home() {
         <Header />
       </header>
 
-      <main className="flex-1 pt-20">{/* page content */}</main>
+      <main className="flex-1 pt-20">
+        <HomePage />
+      </main>
 
       <footer className="py-12 px-4 sm:px-6 lg:px-8 bg-black">
         <div className="max-w-7xl mx-auto text-center space-y-4">
