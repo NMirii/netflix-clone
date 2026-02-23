@@ -6,16 +6,11 @@ export async function GET(req: NextRequest) {
   try {
     const start = Date.now();
 
-    const country =
-      req.geo?.country ?? req.headers.get("x-vercel-ip-country") ?? "Unknown";
-    const region =
-      req.geo?.region ??
-      req.headers.get("x-vercel-ip-country-region") ??
-      "Unknown";
-    const city =
-      req.geo?.city ?? req.headers.get("x-vercel-ip-city") ?? "Unknown";
-    const latitude = req.geo?.latitude ?? null;
-    const longitude = req.geo?.longitude ?? null;
+    const country = req.headers.get("x-vercel-ip-country") ?? "Unknown";
+    const region = req.headers.get("x-vercel-ip-country-region") ?? "Unknown";
+    const city = req.headers.get("x-vercel-ip-city") ?? "Unknown";
+    const latitude = req.headers.get("x-vercel-ip-latitude") ?? null;
+    const longitude = req.headers.get("x-vercel-ip-longitude") ?? null;
     const timezone = req.headers.get("x-vercel-ip-timezone") ?? "Unknown";
 
     const edgeLocation =
