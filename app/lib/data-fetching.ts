@@ -6,8 +6,6 @@ import { Region } from "./Region";
 export async function TopRatedLocal() {
   const region = await Region();
   console.log(region);
-  //   const baseURL = process.env.NEXT_PUBLIC_API_URL
-  //   const API_KEY = process.env.TMDB_API_KEY
   if (!TMDB_BASE_URL || !TMDB_API_KEY) {
     throw new Error("Error");
   }
@@ -21,8 +19,6 @@ export async function TopRatedLocal() {
 }
 
 export async function NowPlaying() {
-  //   const baseURL = process.env.NEXT_PUBLIC_API_URL;
-  //   const API_KEY = process.env.TMDB_API_KEY;
   if (!TMDB_BASE_URL || !TMDB_API_KEY) {
     throw new Error("Error");
   }
@@ -36,8 +32,6 @@ export async function NowPlaying() {
 }
 
 export async function Popular() {
-//   const baseURL = process.env.NEXT_PUBLIC_API_URL;
-//   const API_KEY = process.env.TMDB_API_KEY;
   if (!TMDB_BASE_URL || !TMDB_API_KEY) {
     throw new Error("Error");
   }

@@ -3,17 +3,18 @@ import Header from "./components/Header";
 import HomePage from "./components/HomePage";
 import Loading from "./components/Loading";
 
+export const runtime = "edge";
+
 export default function Home() {
   return (
     <Suspense fallback={<Loading />}>
       <div className="min-h-screen bg-black flex flex-col">
-        <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-black/80 to-transparent backdrop-blur-sm">
+        <header className="fixed top-0 left-0 right-0 z-50 bg-gradient from-black/80 to-transparent backdrop-blur-sm">
           <Header />
         </header>
-
-        <main className="flex-1 pt-20">
-          <HomePage />
-        </main>
+          <main className="flex-1 pt-20">
+            <HomePage />
+          </main>
 
         <footer className="py-12 px-4 sm:px-6 lg:px-8 bg-black">
           <div className="max-w-7xl mx-auto text-center space-y-4">

@@ -1,10 +1,15 @@
-import LocalPart from "../components/LocalMovies"
-import { TopRatedLocal } from "../lib/data-fetching"
-import { Suspense } from "react"
-import Loading from "../components/Loading"
+import LocalPart from "../components/LocalMovies";
+import { TopRatedLocal } from "../lib/data-fetching";
+import { Suspense } from "react";
+import Loading from "../components/Loading";
 
-const data = await TopRatedLocal()
+export const runtime = "edge";
 
-export default function Home() {
-  return <Suspense fallback={<Loading />}><LocalPart data={data} /></Suspense>
+export default async function Home() {
+  const data = await TopRatedLocal();
+  return (
+    <Suspense fallback={<Loading />}>
+      <LocalPart data={data} />
+    </Suspense>
+  );
 }
